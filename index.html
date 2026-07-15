@@ -251,11 +251,11 @@
 <div id="placesGallery" class="gallery-screen"><div class="blur-bg" id="placesBlurA"></div><div class="blur-bg" id="placesBlurB"></div><div class="image-track" id="placesTrack"><img class="places-img" id="placesImg" alt=""></div></div>
 <div id="continuousSpectrumGallery" class="gallery-screen"><div class="blur-bg" id="spectrumBlurA"></div><div class="blur-bg" id="spectrumBlurB"></div><div class="image-track" id="spectrumTrack"><img class="spectrum-img" id="spectrumImg" alt=""></div></div>
 
-<div id="miniatureStreetColor" class="miniature-screen">
-    <div class="miniature-logo" data-mode="streetcolor">ВНЕ ВРЕМЕНИ</div>
-    <div class="gallery-grid" id="miniGridStreetColor"></div>
-    <button class="miniature-home-link" id="miniHomeStreetColor"><span class="arrow">←</span> на главную</button>
-    <button class="miniature-project-link" id="miniProjectStreetColor">о проекте</button>
+<div id="miniatureVnevremeni" class="miniature-screen">
+    <div class="miniature-logo" data-mode="vnevremeni">ВНЕ ВРЕМЕНИ</div>
+    <div class="gallery-grid" id="miniGridVnevremeni"></div>
+    <button class="miniature-home-link" id="miniHomeVnevremeni"><span class="arrow">←</span> на главную</button>
+    <button class="miniature-project-link" id="miniProjectVnevremeni">о проекте</button>
 </div>
 <div id="miniatureSubway" class="miniature-screen">
     <div class="miniature-logo" data-mode="subwaybw">В ГЛУБИНЕ</div>
@@ -289,7 +289,7 @@
 </div>
 
 <div class="nav-buttons hidden" id="navButtons">
-    <div class="nav-item-with-submenu" id="projectsMenuItem"><button class="nav-btn" id="btnProjectsTrigger"><span class="nav-text">Проекты</span><span class="bullet"></span></button><div class="submenu" id="projectsSubmenu"><button class="submenu-btn" id="btnStreetColor"><span>Вне времени</span><span class="bullet"></span></button><button class="submenu-btn" id="btnSubwayBW"><span>В глубине</span><span class="bullet"></span></button><button class="submenu-btn" id="btnPlaces"><span>Места, объекты, свет</span><span class="bullet"></span></button><button class="submenu-btn" id="btnSpectrum"><span>Непрерывный спектр</span><span class="bullet"></span></button></div></div>
+    <div class="nav-item-with-submenu" id="projectsMenuItem"><button class="nav-btn" id="btnProjectsTrigger"><span class="nav-text">Проекты</span><span class="bullet"></span></button><div class="submenu" id="projectsSubmenu"><button class="submenu-btn" id="btnVnevremeni"><span>Вне времени</span><span class="bullet"></span></button><button class="submenu-btn" id="btnSubwayBW"><span>В глубине</span><span class="bullet"></span></button><button class="submenu-btn" id="btnPlaces"><span>Места, объекты, свет</span><span class="bullet"></span></button><button class="submenu-btn" id="btnSpectrum"><span>Непрерывный спектр</span><span class="bullet"></span></button></div></div>
     <button class="nav-btn" id="infoButton"><span class="nav-text">Инфо</span><span class="bullet"></span></button>
 </div>
 <div class="right-menu hidden" id="rightMenu"><div class="right-menu-item" id="rightMenuItem">о проекте</div></div>
@@ -325,11 +325,11 @@
     </div>
 </div>
 
-<div id="streetProjectModal" class="info-modal dark-bg">
-    <div class="info-modal-title" id="streetProjectModalTitle">ВНЕ ВРЕМЕНИ</div>
+<div id="vnevremeniProjectModal" class="info-modal dark-bg">
+    <div class="info-modal-title" id="vnevremeniProjectModalTitle">ВНЕ ВРЕМЕНИ</div>
     <div class="info-modal-content">
-        <div class="info-text" id="streetProjectModalText"><p>Этот проект появился в мыслях случайно, и решил его продолжать. В некоторых фотографиях у меня возникает чувство, будто они вне времени, что-то тягучее, они в некотором смысле монументальны и заставляют задуматься, замереть, успокоиться.</p></div>
-        <div class="info-location-wrapper"><div class="info-location" id="streetProjectModalLocation">Санкт-Петербург, 2026 — в процессе</div><div class="project-gallery-link" id="streetProjectGalleryLink">перейти в галерею<span class="arrow">→</span></div></div>
+        <div class="info-text" id="vnevremeniProjectModalText"><p>Этот проект появился в мыслях случайно, и решил его продолжать. В некоторых фотографиях у меня возникает чувство, будто они вне времени, что-то тягучее, они в некотором смысле монументальны и заставляют задуматься, замереть, успокоиться.</p></div>
+        <div class="info-location-wrapper"><div class="info-location" id="vnevremeniProjectModalLocation">Санкт-Петербург, 2026 — в процессе</div><div class="project-gallery-link" id="vnevremeniProjectGalleryLink">перейти в галерею<span class="arrow">→</span></div></div>
     </div>
 </div>
 
@@ -348,7 +348,7 @@
     const sunSVG='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
     const moonSVG='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
 
-    const streetColorDataFull = [
+    const vnevremeniDataFull = [
         {url:"https://static.tildacdn.com/tild6366-6438-4930-b031-323964363864/1781375864000_R00023.jpg"},
         {url:"https://static.tildacdn.com/tild6330-6232-4434-b431-353238363830/1782727803000_R00030.jpg"},
         {url:"https://static.tildacdn.com/tild6431-3766-4733-b231-316439356230/1781546107000_R00025.jpg"},
@@ -404,7 +404,7 @@
     // --- HELPERS ---
     function getMainPhotosUniqShuffled() {
         const map=new Map();
-        [streetColorDataFull, subwayBWDataFull, placesDataFull].forEach(arr=>arr.forEach(i=>{if(!map.has(i.url))map.set(i.url,i);}));
+        [vnevremeniDataFull, subwayBWDataFull, placesDataFull].forEach(arr=>arr.forEach(i=>{if(!map.has(i.url))map.set(i.url,i);}));
         const unique=Array.from(map.values());
         for(let i=unique.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[unique[i],unique[j]]=[unique[j],unique[i]];}
         return unique;
@@ -417,7 +417,7 @@
         function preload(urls){urls.forEach(u=>get(u));}
         return {get,preload};
     })();
-    const allUrls=[...streetColorDataFull,...subwayBWDataFull,...placesDataFull,...spectrumDataFull].map(i=>i.url);
+    const allUrls=[...vnevremeniDataFull,...subwayBWDataFull,...placesDataFull,...spectrumDataFull].map(i=>i.url);
     imageCache.preload(allUrls);
 
     // --- GALLERY FACTORY ---
@@ -452,14 +452,14 @@
     }
 
     // --- INIT GALLERIES ---
-    const colorGal=createGallery('colorGallery','colorImg','colorBlurA','colorBlurB',streetColorDataFull);
+    const colorGal=createGallery('colorGallery','colorImg','colorBlurA','colorBlurB',vnevremeniDataFull);
     const subwayBWGal=createGallery('bwGallery','bwImg','bwBlurA','bwBlurB',subwayBWDataFull);
-    const streetColorGal=createGallery('streetColorGallery','streetImg','streetBlurA','streetBlurB',streetColorDataFull);
+    const vnevremeniGal=createGallery('streetColorGallery','streetImg','streetBlurA','streetBlurB',vnevremeniDataFull);
     const placesGal=createGallery('placesGallery','placesImg','placesBlurA','placesBlurB',placesDataFull);
     const spectrumGal=createGallery('continuousSpectrumGallery','spectrumImg','spectrumBlurA','spectrumBlurB',spectrumDataFull);
     let currentMainData=getMainPhotosUniqShuffled();
     const mainGal=createGallery('mainGallery','mainImg','mainBlurA','mainBlurB',currentMainData);
-    [colorGal,subwayBWGal,streetColorGal,placesGal,spectrumGal,mainGal].forEach(g=>g.init());
+    [colorGal,subwayBWGal,vnevremeniGal,placesGal,spectrumGal,mainGal].forEach(g=>g.init());
 
     // --- AUTO SLIDE ---
     let autoTimer=null, autoActive=false;
@@ -501,7 +501,7 @@
     const closeInfoBtn=document.getElementById('closeInfoBtn'), closeMiniatureBtn=document.getElementById('closeMiniatureBtn');
     const navButtons=document.getElementById('navButtons'), rightMenu=document.getElementById('rightMenu'), rightMenuItem=document.getElementById('rightMenuItem');
     const btnProjectsTrigger=document.getElementById('btnProjectsTrigger');
-    const btnStreetColor=document.getElementById('btnStreetColor'), btnSubwayBW=document.getElementById('btnSubwayBW'), btnPlaces=document.getElementById('btnPlaces'), btnSpectrum=document.getElementById('btnSpectrum');
+    const btnVnevremeni=document.getElementById('btnVnevremeni'), btnSubwayBW=document.getElementById('btnSubwayBW'), btnPlaces=document.getElementById('btnPlaces'), btnSpectrum=document.getElementById('btnSpectrum');
     const projectsSubmenu=document.getElementById('projectsSubmenu');
     const projectsMenuItem=document.getElementById('projectsMenuItem');
     const themeToggle=document.getElementById('themeToggle'), galleryToggle=document.getElementById('galleryToggle');
@@ -514,8 +514,8 @@
     const projectGalleryLink=document.getElementById('projectGalleryLink');
     const placesProjectModal=document.getElementById('placesProjectModal');
     const placesProjectGalleryLink=document.getElementById('placesProjectGalleryLink');
-    const streetProjectModal=document.getElementById('streetProjectModal');
-    const streetProjectGalleryLink=document.getElementById('streetProjectGalleryLink');
+    const vnevremeniProjectModal=document.getElementById('vnevremeniProjectModal');
+    const vnevremeniProjectGalleryLink=document.getElementById('vnevremeniProjectGalleryLink');
     const spectrumProjectModal=document.getElementById('spectrumProjectModal');
     const spectrumProjectGalleryLink=document.getElementById('spectrumProjectGalleryLink');
     const lightboxOverlay=document.getElementById('lightboxOverlay');
@@ -526,19 +526,19 @@
     const lightboxFullscreenToggle=document.getElementById('lightboxFullscreenToggle');
     const lightboxShareToggle=document.getElementById('lightboxShareToggle');
     const lightboxCounter=document.getElementById('lightboxCounter');
-    const miniatureScreens={streetcolor:document.getElementById('miniatureStreetColor'),subwaybw:document.getElementById('miniatureSubway'),places:document.getElementById('miniaturePlaces'),spectrum:document.getElementById('miniatureSpectrum')};
-    const miniGrids={streetcolor:document.getElementById('miniGridStreetColor'),subwaybw:document.getElementById('miniGridSubway'),places:document.getElementById('miniGridPlaces'),spectrum:document.getElementById('miniGridSpectrum')};
+    const miniatureScreens={vnevremeni:document.getElementById('miniatureVnevremeni'),subwaybw:document.getElementById('miniatureSubway'),places:document.getElementById('miniaturePlaces'),spectrum:document.getElementById('miniatureSpectrum')};
+    const miniGrids={vnevremeni:document.getElementById('miniGridVnevremeni'),subwaybw:document.getElementById('miniGridSubway'),places:document.getElementById('miniGridPlaces'),spectrum:document.getElementById('miniGridSpectrum')};
     const allGalleryScreens=[document.getElementById('colorGallery'),document.getElementById('bwGallery'),document.getElementById('streetColorGallery'),document.getElementById('placesGallery'),document.getElementById('mainGallery'),document.getElementById('continuousSpectrumGallery')];
     
     const miniProjectButtons = {
-        streetcolor: document.getElementById('miniProjectStreetColor'),
+        vnevremeni: document.getElementById('miniProjectVnevremeni'),
         subwaybw: document.getElementById('miniProjectSubway'),
         places: document.getElementById('miniProjectPlaces'),
         spectrum: document.getElementById('miniProjectSpectrum')
     };
 
     const miniHomeButtons = {
-        streetcolor: document.getElementById('miniHomeStreetColor'),
+        vnevremeni: document.getElementById('miniHomeVnevremeni'),
         subwaybw: document.getElementById('miniHomeSubway'),
         places: document.getElementById('miniHomePlaces'),
         spectrum: document.getElementById('miniHomeSpectrum')
@@ -550,7 +550,7 @@
 
     // --- RIGHT MENU ---
     function updateRightMenu(mode){
-        if(mode==='streetcolor'){rightMenuItem.innerHTML='о проекте';rightMenuItem.classList.add('clickable');}
+        if(mode==='vnevremeni'){rightMenuItem.innerHTML='о проекте';rightMenuItem.classList.add('clickable');}
         else if(mode==='subwaybw'){rightMenuItem.innerHTML='о проекте';rightMenuItem.classList.add('clickable');}
         else if(mode==='places'){rightMenuItem.innerHTML='о проекте';rightMenuItem.classList.add('clickable');}
         else if(mode==='spectrum'){rightMenuItem.innerHTML='о проекте';rightMenuItem.classList.add('clickable');}
@@ -559,8 +559,8 @@
 
     // --- Функция для возврата на страницу проекта из миниатюр ---
     function goToProjectFromMiniature(mode) {
-        if (mode === 'streetcolor') {
-            switchToMode('streetcolor');
+        if (mode === 'vnevremeni') {
+            switchToMode('vnevremeni');
         } else if (mode === 'subwaybw') {
             switchToMode('subwaybw');
         } else if (mode === 'places') {
@@ -586,7 +586,7 @@
     function updateBurgerVisibility() {
         const isMobile = window.innerWidth <= 1300;
         const isMiniature = currentMode === 'miniature';
-        const isInfoOpen = infoModal.classList.contains('visible') || projectModal.classList.contains('visible') || placesProjectModal.classList.contains('visible') || streetProjectModal.classList.contains('visible') || spectrumProjectModal.classList.contains('visible');
+        const isInfoOpen = infoModal.classList.contains('visible') || projectModal.classList.contains('visible') || placesProjectModal.classList.contains('visible') || vnevremeniProjectModal.classList.contains('visible') || spectrumProjectModal.classList.contains('visible');
         const isMenuOpen = mobileMenuOverlayElem.classList.contains('open');
         const shouldBeVisible = (isMobile && !isMiniature && !isInfoOpen && currentMode !== 'slider');
         
@@ -631,7 +631,7 @@
         const list=document.getElementById('mobileMenuList');
         list.innerHTML='';
         const items=['Вне времени','В глубине','Места, объекты, свет','Непрерывный спектр','Инфо'];
-        const actions=['streetcolor','subwaybw','places','spectrum',null];
+        const actions=['vnevremeni','subwaybw','places','spectrum',null];
         items.forEach((label,idx)=>{const li=document.createElement('li');li.textContent=label;li.classList.add('mobile-menu-item');if(label==='Инфо')li.classList.add('info-item');li.addEventListener('click',()=>{if(actions[idx]===null)openInfoModal();else switchToMode(actions[idx]);closeMobileMenu();});list.appendChild(li);});
     }
     buildMobileMenu();
@@ -655,7 +655,7 @@
             mainSlider.classList.add('slide-up');
         }
         allGalleryScreens.forEach(sc=>sc.classList.remove('visible'));
-        [colorGal,subwayBWGal,streetColorGal,placesGal,spectrumGal,mainGal].forEach(g=>g.hide());
+        [colorGal,subwayBWGal,vnevremeniGal,placesGal,spectrumGal,mainGal].forEach(g=>g.hide());
         startSlider();
         if(mode==='slider'){
             document.body.classList.remove('gallery-mode');
@@ -695,7 +695,7 @@
             infoButton.classList.remove('hidden');
             closeMiniatureBtn.classList.remove('visible');
             logo.classList.remove('hidden');
-            const modeMap={streetcolor:streetColorGal,subwaybw:subwayBWGal,places:placesGal,spectrum:spectrumGal};
+            const modeMap={vnevremeni:vnevremeniGal,subwaybw:subwayBWGal,places:placesGal,spectrum:spectrumGal};
             const gal=modeMap[mode];
             if(gal){gal.show();enableAuto(gal);currentMode=mode;updateRightMenu(mode);}
             document.querySelectorAll('.submenu').forEach(s=>s.classList.remove('open'));
@@ -704,14 +704,14 @@
             updateBurgerVisibility();
         }
         document.querySelectorAll('.nav-btn, .submenu-btn').forEach(btn=>btn.classList.remove('active'));
-        if(mode==='streetcolor')btnStreetColor.classList.add('active');
+        if(mode==='vnevremeni')btnVnevremeni.classList.add('active');
         else if(mode==='subwaybw')btnSubwayBW.classList.add('active');
         else if(mode==='places')btnPlaces.classList.add('active');
         else if(mode==='spectrum')btnSpectrum.classList.add('active');
         if(!skipUrl){
             let newHash='';
             if(mode==='main')newHash='#main';
-            else if(['streetcolor','subwaybw','places','spectrum'].includes(mode))newHash='#'+mode;
+            else if(['vnevremeni','subwaybw','places','spectrum'].includes(mode))newHash='#'+mode;
             if(window.location.hash!==newHash)history.pushState(null,'',newHash||window.location.pathname);
         }
     }
@@ -721,14 +721,14 @@
     function renderMiniatureGrid(gridElement,data){gridElement.innerHTML='';data.forEach((photo,idx)=>{const item=document.createElement('div');item.className='grid-item';const img=document.createElement('img');img.src=photo.url;img.alt='Фото';img.setAttribute('data-index',idx);item.appendChild(img);item.addEventListener('click',()=>openLightbox(data,idx));gridElement.appendChild(item);});}
     function enterMiniatureMode(sourceMode,updateHistory=true){
         Object.values(miniatureScreens).forEach(el=>el.classList.remove('visible'));
-        const dataMap={streetcolor:streetColorDataFull,subwaybw:subwayBWDataFull,places:placesDataFull,spectrum:spectrumDataFull};
+        const dataMap={vnevremeni:vnevremeniDataFull,subwaybw:subwayBWDataFull,places:placesDataFull,spectrum:spectrumDataFull};
         const data=dataMap[sourceMode]||[];
         const gridElement=miniGrids[sourceMode];
         if(gridElement)renderMiniatureGrid(gridElement,data);
         disableAuto();stopAuto();
         mainSlider.classList.add('slide-up');
         allGalleryScreens.forEach(sc=>sc.classList.remove('visible'));
-        [colorGal,subwayBWGal,streetColorGal,placesGal,spectrumGal,mainGal].forEach(g=>g.hide());
+        [colorGal,subwayBWGal,vnevremeniGal,placesGal,spectrumGal,mainGal].forEach(g=>g.hide());
         const targetScreen=miniatureScreens[sourceMode];
         if(targetScreen)targetScreen.classList.add('visible');
         document.body.classList.add('gallery-mode','miniature-mode');
@@ -755,7 +755,7 @@
             updateBurgerVisibility();
         }
     }
-    galleryToggle.addEventListener('click',()=>{const activeModes=['streetcolor','subwaybw','places','spectrum'];if(activeModes.includes(currentMode))enterMiniatureMode(currentMode,true);});
+    galleryToggle.addEventListener('click',()=>{const activeModes=['vnevremeni','subwaybw','places','spectrum'];if(activeModes.includes(currentMode))enterMiniatureMode(currentMode,true);});
     closeMiniatureBtn.addEventListener('click',exitMiniatureMode);
 
     // --- Обработчики для кнопок "на главную" в миниатюрах (ведут на #main) ---
@@ -780,10 +780,10 @@
 
     // --- Обработчики для кнопок "о проекте" в миниатюрах ---
     function setupMiniatureProjectButtons() {
-        if (miniProjectButtons.streetcolor) {
-            miniProjectButtons.streetcolor.addEventListener('click', function(e) {
+        if (miniProjectButtons.vnevremeni) {
+            miniProjectButtons.vnevremeni.addEventListener('click', function(e) {
                 e.stopPropagation();
-                openStreetProjectModal();
+                openVnevremeniProjectModal();
             });
         }
         if (miniProjectButtons.subwaybw) {
@@ -813,7 +813,7 @@
         infoModal.classList.remove('visible');
         projectModal.classList.remove('visible');
         placesProjectModal.classList.remove('visible');
-        streetProjectModal.classList.remove('visible');
+        vnevremeniProjectModal.classList.remove('visible');
         spectrumProjectModal.classList.remove('visible');
         document.body.classList.remove('no-scroll');
     }
@@ -872,9 +872,9 @@
         updateBurgerVisibility();
     }
     
-    function openStreetProjectModal(){
+    function openVnevremeniProjectModal(){
         closeAllModals();
-        streetProjectModal.classList.add('visible');
+        vnevremeniProjectModal.classList.add('visible');
         document.body.classList.add('no-scroll');
         logo.classList.add('hidden');
         infoButton.classList.add('hidden');
@@ -911,15 +911,13 @@
     infoButton.addEventListener('click',openInfoModal);
     
     // --- Закрытие модальных окон по клику на оверлей (пустую область) ---
-    const allModals = [infoModal, projectModal, placesProjectModal, streetProjectModal, spectrumProjectModal];
+    const allModals = [infoModal, projectModal, placesProjectModal, vnevremeniProjectModal, spectrumProjectModal];
     allModals.forEach(modal => {
         modal.addEventListener('click', function(e) {
-            // Закрываем модальное окно, если клик был именно по самому оверлею (не по дочерним элементам)
             if (e.target === this) {
                 closeAllModals();
-                // Восстанавливаем интерфейс после закрытия
                 setTimeout(() => {
-                    if (!infoModal.classList.contains('visible') && !projectModal.classList.contains('visible') && !placesProjectModal.classList.contains('visible') && !streetProjectModal.classList.contains('visible') && !spectrumProjectModal.classList.contains('visible')) {
+                    if (!infoModal.classList.contains('visible') && !projectModal.classList.contains('visible') && !placesProjectModal.classList.contains('visible') && !vnevremeniProjectModal.classList.contains('visible') && !spectrumProjectModal.classList.contains('visible')) {
                         if (currentMode !== 'miniature') {
                             logo.classList.remove('hidden');
                         } else {
@@ -948,7 +946,7 @@
                             navButtons.classList.add('hidden');
                         }
                         
-                        if (['streetcolor','subwaybw','places','spectrum'].includes(currentMode)) {
+                        if (['vnevremeni','subwaybw','places','spectrum'].includes(currentMode)) {
                             rightMenu.classList.remove('hidden');
                         } else {
                             rightMenu.classList.add('hidden');
@@ -989,7 +987,7 @@
     closeInfoBtn.addEventListener('click', function() {
         closeAllModals();
         setTimeout(() => {
-            if (!infoModal.classList.contains('visible') && !projectModal.classList.contains('visible') && !placesProjectModal.classList.contains('visible') && !streetProjectModal.classList.contains('visible') && !spectrumProjectModal.classList.contains('visible')) {
+            if (!infoModal.classList.contains('visible') && !projectModal.classList.contains('visible') && !placesProjectModal.classList.contains('visible') && !vnevremeniProjectModal.classList.contains('visible') && !spectrumProjectModal.classList.contains('visible')) {
                 if (currentMode !== 'miniature') {
                     logo.classList.remove('hidden');
                 } else {
@@ -1018,7 +1016,7 @@
                     navButtons.classList.add('hidden');
                 }
                 
-                if (['streetcolor','subwaybw','places','spectrum'].includes(currentMode)) {
+                if (['vnevremeni','subwaybw','places','spectrum'].includes(currentMode)) {
                     rightMenu.classList.remove('hidden');
                 } else {
                     rightMenu.classList.add('hidden');
@@ -1056,10 +1054,10 @@
     
     projectGalleryLink.addEventListener('click',function(e){e.stopPropagation();projectModal.classList.remove('visible');closeInfoBtn.classList.remove('visible');document.body.classList.remove('no-scroll');enterMiniatureMode('subwaybw',true);});
     placesProjectGalleryLink.addEventListener('click',function(e){e.stopPropagation();placesProjectModal.classList.remove('visible');closeInfoBtn.classList.remove('visible');document.body.classList.remove('no-scroll');enterMiniatureMode('places',true);});
-    streetProjectGalleryLink.addEventListener('click',function(e){e.stopPropagation();streetProjectModal.classList.remove('visible');closeInfoBtn.classList.remove('visible');document.body.classList.remove('no-scroll');enterMiniatureMode('streetcolor',true);});
+    vnevremeniProjectGalleryLink.addEventListener('click',function(e){e.stopPropagation();vnevremeniProjectModal.classList.remove('visible');closeInfoBtn.classList.remove('visible');document.body.classList.remove('no-scroll');enterMiniatureMode('vnevremeni',true);});
     spectrumProjectGalleryLink.addEventListener('click',function(e){e.stopPropagation();spectrumProjectModal.classList.remove('visible');closeInfoBtn.classList.remove('visible');document.body.classList.remove('no-scroll');enterMiniatureMode('spectrum',true);});
     
-    rightMenuItem.addEventListener('click',function(){if(rightMenuItem.classList.contains('clickable')){if(currentMode==='streetcolor')openStreetProjectModal();else if(currentMode==='subwaybw')openProjectModal();else if(currentMode==='places')openPlacesProjectModal();else if(currentMode==='spectrum')openSpectrumProjectModal();}});
+    rightMenuItem.addEventListener('click',function(){if(rightMenuItem.classList.contains('clickable')){if(currentMode==='vnevremeni')openVnevremeniProjectModal();else if(currentMode==='subwaybw')openProjectModal();else if(currentMode==='places')openPlacesProjectModal();else if(currentMode==='spectrum')openSpectrumProjectModal();}});
 
     // --- LIGHTBOX ---
     function updateLightboxCounter(){lightboxCounter.textContent=`${currentLightboxIndex+1}/${currentLightboxData.length}`;}
@@ -1083,13 +1081,13 @@
     attachClickHandler(document.getElementById('mainGallery'),mainGal);
     attachClickHandler(document.getElementById('colorGallery'),colorGal);
     attachClickHandler(document.getElementById('bwGallery'),subwayBWGal);
-    attachClickHandler(document.getElementById('streetColorGallery'),streetColorGal);
+    attachClickHandler(document.getElementById('streetColorGallery'),vnevremeniGal);
     attachClickHandler(document.getElementById('placesGallery'),placesGal);
     attachClickHandler(document.getElementById('continuousSpectrumGallery'),spectrumGal);
 
     // --- NAV ---
-    btnProjectsTrigger.addEventListener('click',(e)=>{e.stopPropagation();if(projectsSubmenu.classList.contains('open')){projectsSubmenu.classList.remove('open');projectsMenuItem.classList.remove('open');if(currentMode!=='streetcolor')switchToMode('streetcolor');}else{document.querySelectorAll('.submenu').forEach(s=>s.classList.remove('open'));document.querySelectorAll('.nav-item-with-submenu').forEach(item=>item.classList.remove('open'));projectsSubmenu.classList.add('open');projectsMenuItem.classList.add('open');}});
-    btnStreetColor.addEventListener('click',()=>switchToMode('streetcolor'));
+    btnProjectsTrigger.addEventListener('click',(e)=>{e.stopPropagation();if(projectsSubmenu.classList.contains('open')){projectsSubmenu.classList.remove('open');projectsMenuItem.classList.remove('open');if(currentMode!=='vnevremeni')switchToMode('vnevremeni');}else{document.querySelectorAll('.submenu').forEach(s=>s.classList.remove('open'));document.querySelectorAll('.nav-item-with-submenu').forEach(item=>item.classList.remove('open'));projectsSubmenu.classList.add('open');projectsMenuItem.classList.add('open');}});
+    btnVnevremeni.addEventListener('click',()=>switchToMode('vnevremeni'));
     btnSubwayBW.addEventListener('click',()=>switchToMode('subwaybw'));
     btnPlaces.addEventListener('click',()=>switchToMode('places'));
     btnSpectrum.addEventListener('click',()=>switchToMode('spectrum'));
@@ -1105,7 +1103,7 @@
             e.preventDefault();disableAuto();
             if(currentMode==='slider'){key==='ArrowLeft'?prevSlide():nextSlide();return;}
             if(currentMode==='miniature'||currentMode==='main'){if(currentMode==='main'){key==='ArrowLeft'?mainGal.prev():mainGal.next();}return;}
-            const map={streetcolor:streetColorGal,subwaybw:subwayBWGal,places:placesGal,spectrum:spectrumGal};
+            const map={vnevremeni:vnevremeniGal,subwaybw:subwayBWGal,places:placesGal,spectrum:spectrumGal};
             const gal=map[currentMode];
             if(gal){key==='ArrowLeft'?gal.prev():gal.next();}
         }
@@ -1164,9 +1162,9 @@
     // --- HASH ROUTING ---
     function onHashChange(){
         const hash=window.location.hash.slice(1);
-        if(hash.endsWith('-min')){const src=hash.slice(0,-4);if(['streetcolor','subwaybw','places','spectrum'].includes(src)){enterMiniatureMode(src,false);}return;}
+        if(hash.endsWith('-min')){const src=hash.slice(0,-4);if(['vnevremeni','subwaybw','places','spectrum'].includes(src)){enterMiniatureMode(src,false);}return;}
         if(hash==='main')setMode('main',true);
-        else if(['streetcolor','subwaybw','places','spectrum'].includes(hash))setMode(hash,true);
+        else if(['vnevremeni','subwaybw','places','spectrum'].includes(hash))setMode(hash,true);
         else setMode('slider',true);
     }
     window.addEventListener('hashchange',onHashChange);
