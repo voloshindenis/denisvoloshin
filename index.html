@@ -910,6 +910,82 @@
     
     infoButton.addEventListener('click',openInfoModal);
     
+    // --- Закрытие модальных окон по клику на оверлей (пустую область) ---
+    const allModals = [infoModal, projectModal, placesProjectModal, streetProjectModal, spectrumProjectModal];
+    allModals.forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            // Закрываем модальное окно, если клик был именно по самому оверлею (не по дочерним элементам)
+            if (e.target === this) {
+                closeAllModals();
+                // Восстанавливаем интерфейс после закрытия
+                setTimeout(() => {
+                    if (!infoModal.classList.contains('visible') && !projectModal.classList.contains('visible') && !placesProjectModal.classList.contains('visible') && !streetProjectModal.classList.contains('visible') && !spectrumProjectModal.classList.contains('visible')) {
+                        if (currentMode !== 'miniature') {
+                            logo.classList.remove('hidden');
+                        } else {
+                            logo.classList.add('hidden');
+                        }
+                        
+                        if (currentMode !== 'miniature') {
+                            themeToggle.classList.remove('hidden');
+                            mobileThemeButton.classList.add('hidden');
+                            infoButton.classList.remove('hidden');
+                        } else {
+                            themeToggle.classList.add('hidden');
+                            mobileThemeButton.classList.remove('hidden');
+                            mobileThemeButton.style.display = 'flex';
+                        }
+                        
+                        if (currentMode !== 'slider') {
+                            document.body.classList.add('gallery-mode');
+                        } else {
+                            document.body.classList.remove('gallery-mode');
+                        }
+                        
+                        if (currentMode !== 'slider' && currentMode !== 'miniature') {
+                            navButtons.classList.remove('hidden');
+                        } else {
+                            navButtons.classList.add('hidden');
+                        }
+                        
+                        if (['streetcolor','subwaybw','places','spectrum'].includes(currentMode)) {
+                            rightMenu.classList.remove('hidden');
+                        } else {
+                            rightMenu.classList.add('hidden');
+                        }
+                        
+                        if (currentMode === 'slider') {
+                            scrollArrow.classList.remove('hidden');
+                        } else {
+                            scrollArrow.classList.add('hidden');
+                        }
+                        
+                        const visible = (currentMode !== 'slider' && currentMode !== 'miniature');
+                        if (currentMode !== 'miniature') {
+                            themeToggle.classList.toggle('hidden', !visible);
+                        } else {
+                            themeToggle.classList.add('hidden');
+                        }
+                        
+                        if (currentMode !== 'main' && currentMode !== 'slider' && currentMode !== 'miniature') {
+                            galleryToggle.classList.toggle('hidden', !visible);
+                        } else {
+                            galleryToggle.classList.add('hidden');
+                        }
+                        
+                        if (currentMode === 'miniature') {
+                            closeMiniatureBtn.classList.add('visible');
+                        } else {
+                            closeMiniatureBtn.classList.remove('visible');
+                        }
+                        
+                        updateBurgerVisibility();
+                    }
+                }, 350);
+            }
+        });
+    });
+
     closeInfoBtn.addEventListener('click', function() {
         closeAllModals();
         setTimeout(() => {
